@@ -48,20 +48,15 @@ const AboveFold: React.FC = (): ReactElement => {
   //Need to refactor refs to each container, be easier than breaking into nested children.
   // Also refactor animations to show/hide each container once animation complete.
   useLayoutEffect(() => {
-    const switchSlide = () => {
-      if (!serviceSlideTl.current || !contactSlideTl.current) return;
+    if (!serviceSlideTl.current || !contactSlideTl.current) return;
 
+    const switchSlide = async () => {
       if (activeSlide === 0) {
         console.log("contact");
-        contactSlideTl.current
-          .reverse(0)
-          .then(
-            () =>
-              serviceSlideTl.current && serviceSlideTl.current.play().then(() => setActiveSlide(1))
-          );
+        await contactSlideTl.current!.reverse(0);
       } else {
         console.log("service");
-        serviceSlideTl.current.reverse();
+        serviceSlideTl.current!.reverse();
       }
       // activeSlide === 0 ? contactSlideTl.current.reverse(0) : serviceSlideTl.current.reverse(0);
     };
