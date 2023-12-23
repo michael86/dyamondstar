@@ -1,0 +1,76 @@
+header .header--cta {
+  background-color: black;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  gap: 1rem;
+}
+header .header--cta li {
+  color: #458bd6;
+  font-size: 1.8rem;
+  transition: color 200ms ease-in-out;
+  -webkit-transition: color 200ms ease-in-out;
+  -o-transition: color 200ms ease-in-out;
+  -moz-transition: color 200ms ease-in-out;
+}
+header .header--cta li:first-of-type {
+  margin-right: 0.5rem;
+}
+header .header--cta li:hover,
+header .header--cta li:focus {
+  cursor: pointer;
+  color: white;
+}
+header .header--cta span {
+  color: white;
+  margin-right: 0.8rem;
+}
+
+.sticky--menu {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #458bd6;
+  overflow: hidden;
+  z-index: 3;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+nav h1 {
+  text-align: center;
+  flex-grow: 1;
+}
+nav .hamburger {
+  width: 25px;
+  height: 25px;
+  margin: 0 0.7rem;
+  position: relative;
+  margin-left: auto;
+}
+nav .hamburger:hover {
+  cursor: pointer;
+}
+nav .hamburger--line {
+  width: 90%;
+  height: 2px;
+  background-color: #000;
+  display: block;
+  margin: auto;
+  margin-top: 0.5rem;
+}
+nav ul {
+  width: 100%;
+  height: 100vh;
+  font-size: 2rem;
+  list-style: none;
+  text-align: center;
+}
+nav ul li:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=header.css.map */

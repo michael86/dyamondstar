@@ -1,0 +1,122 @@
+@import "./variables.scss";
+
+.fold {
+  margin-top: 2rem;
+
+  .site-title {
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__image {
+      width: 20%;
+      height: auto;
+      margin-right: 2rem;
+    }
+
+    &__header {
+      font-size: 3rem;
+      font-weight: 100;
+
+      span {
+        color: $primaryColor;
+      }
+    }
+  }
+
+  .hero-slider {
+    margin-top: 2rem;
+    overflow-y: hidden;
+    position: relative;
+
+    &__img {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+
+      img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-mask-image: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(rgba(0, 0, 0, 1)) 250px,
+          to(rgba(0, 0, 0, 0))
+        );
+        mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1) 250px,
+          rgba(0, 0, 0, 0)
+        );
+      }
+
+      *:not(img) {
+        position: relative;
+        z-index: 2;
+      }
+
+      &:first-of-type {
+        h2 {
+          font-size: 4rem;
+          margin-top: 4rem;
+        }
+
+        p {
+          font-size: 2rem;
+          max-width: 90%;
+          text-align: center;
+        }
+
+        button {
+          background-color: $primaryColor;
+          padding: 1rem 2rem;
+          margin-top: 2rem;
+          display: inline-block;
+          box-shadow: 2px 2px 5px #000;
+          transition: all 0.2s ease-in-out;
+          border: none;
+          border-radius: 5px;
+          &:hover {
+            transform: translateY(2px);
+            box-shadow: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &__buttons {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    &__button {
+      width: 25px;
+      height: 25px;
+      border-radius: 25rem;
+      background-color: $primaryColor;
+
+      &:first-of-type {
+        margin-right: 0.8rem;
+      }
+
+      &:hover {
+        background-color: #000;
+        cursor: pointer;
+      }
+    }
+  }
+}
