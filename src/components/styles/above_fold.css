@@ -22,14 +22,17 @@
   margin-top: 2rem;
   overflow-y: hidden;
   position: relative;
+  height: 58rem;
 }
 .fold .hero-slider__img {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 58rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  padding-top: 36%;
   color: #fff;
 }
 .fold .hero-slider__img img {
@@ -46,7 +49,6 @@
 }
 .fold .hero-slider__img:first-of-type h2 {
   font-size: 4rem;
-  margin-top: 4rem;
 }
 .fold .hero-slider__img:first-of-type p {
   font-size: 2rem;
@@ -68,6 +70,45 @@
   box-shadow: none;
   cursor: pointer;
 }
+.fold .hero-slider__services {
+  color: #000;
+  display: block;
+  text-align: center;
+  padding-top: 1rem;
+}
+.fold .hero-slider__services h2 {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  text-shadow: 4px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.fold .hero-slider__services .container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.fold .hero-slider__services .service {
+  width: 33.3%;
+  text-align: center;
+  color: #000;
+  padding-top: 2rem;
+}
+.fold .hero-slider__services .service.start {
+  transform: translateY(-25px);
+}
+.fold .hero-slider__services .service.end {
+  transform: translateY(75px);
+}
+.fold .hero-slider__services svg {
+  width: 50px;
+  height: 50px;
+  color: #000;
+  padding: 1.8rem;
+  background-color: #fff;
+  border: 0.5rem solid #458bd6;
+  border-radius: 50%;
+  box-shadow: 10px 10px 20px #000;
+}
 .fold .hero-slider__buttons {
   position: absolute;
   left: 0;
@@ -88,4 +129,4 @@
 .fold .hero-slider__button:hover {
   background-color: #000;
   cursor: pointer;
-}/*# sourceMappingURL=above_fold.css.map */
+}
