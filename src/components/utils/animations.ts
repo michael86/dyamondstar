@@ -1,11 +1,8 @@
 import gsap from "gsap";
 
-type ShowContact = (
-  contact: Element,
-  buttons: Element[]
-) => GSAPTimeline | undefined;
+type ShowContact = (contact: Element) => GSAPTimeline | undefined;
 
-export const showContact: ShowContact = (contact, buttons) => {
+export const showContact: ShowContact = (contact) => {
   if (!contact) return;
 
   return gsap
@@ -23,11 +20,9 @@ export const showContact: ShowContact = (contact, buttons) => {
       contact,
       {
         autoAlpha: 0,
-        scale: 0,
       },
       {
         autoAlpha: 1,
-        scale: 1,
       }
     )
     .fromTo(
@@ -62,26 +57,13 @@ export const showContact: ShowContact = (contact, buttons) => {
         y: 0,
         autoAlpha: 1,
       }
-    )
-    .fromTo(
-      buttons,
-      { autoAlpha: 0, scale: 0, stagger: 0.2 },
-      {
-        autoAlpha: 1,
-        scale: 1,
-        stagger: 0.2,
-      }
-    )
-    .to(buttons[0], { backgroundColor: "#000" });
+    );
 };
 
-type ShowServices = (
-  services: Element,
-  buttons: Element[]
-) => GSAPTimeline | undefined;
+type ShowServices = (services: Element) => GSAPTimeline | undefined;
 
-export const showServices: ShowServices = (services, buttons) => {
-  if (!services || !buttons) return;
+export const showServices: ShowServices = (services) => {
+  if (!services) return;
   const serviceIcons = services.children[2];
   return gsap
     .timeline({
@@ -97,8 +79,10 @@ export const showServices: ShowServices = (services, buttons) => {
     .fromTo(services, { autoAlpha: 0 }, { autoAlpha: 1 })
     .fromTo(
       serviceIcons.children,
-      { scale: 0, autoAlpha: 0, stagger: 0.1 },
-      { scale: 1.2, autoAlpha: 0.5, stagger: 0.1 }
-    )
-    .to(serviceIcons.children, { scale: 1, autoAlpha: 1 });
+      { autoAlpha: 0, stagger: 0.15 },
+      {
+        autoAlpha: 1,
+        stagger: 0.15,
+      }
+    );
 };

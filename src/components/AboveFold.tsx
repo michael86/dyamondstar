@@ -1,9 +1,9 @@
-import { ReactElement, useLayoutEffect, useRef, useState } from "react";
 import "./styles/above_fold.css";
+import { ReactElement, useLayoutEffect, useRef } from "react";
 
 import { useGSAP } from "@gsap/react";
 import { showContact, showServices } from "./utils/animations";
-import { gsap } from "gsap/gsap-core";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPepperHot,
@@ -18,43 +18,39 @@ import {
 const AboveFold: React.FC = (): ReactElement => {
   const contactContainer = useRef<HTMLDivElement | null>(null);
   const serviceContainer = useRef<HTMLDivElement | null>(null);
-  const buttonsContainer = useRef<HTMLDivElement | null>(null);
   const showContactTL = useRef<GSAPTimeline | undefined>();
   const showServiceTL = useRef<GSAPTimeline | undefined>();
-  let activeSlide: 0 | 1 = 0;
+  let activeSlide = useRef<0 | 1>(0);
 
   useGSAP(async () => {
-    if (
-      !serviceContainer.current ||
-      !contactContainer.current ||
-      !buttonsContainer.current
-    )
-      return;
+    if (!serviceContainer.current || !contactContainer.current) return;
 
-    const buttons = Array.from(buttonsContainer.current.children);
-
-    showContactTL.current = showContact(
-      contactContainer.current,
-      buttons
-    )?.play();
-
-    showServiceTL.current = showServices(serviceContainer.current, buttons);
+    showContactTL.current = showContact(contactContainer.current);
+    showServiceTL.current = showServices(serviceContainer.current);
+    await showContactTL.current?.play();
   });
 
   useLayoutEffect(() => {
-    if (!buttonsContainer.current) return;
+    const playSibling = (timer: number = 2000) => {
+      setTimeout(() => {
+        activeSlide.current === 0
+          ? showServiceTL.current?.play()
+          : showContactTL.current?.play();
+
+        activeSlide.current = activeSlide.current === 0 ? 1 : 0;
+      }, timer);
+    };
 
     const switchSlide = async () => {
-      if (activeSlide === 0) {
-        console.log("contact");
-        await showContactTL.current?.reverse();
-        await showServiceTL.current?.play();
-        activeSlide = 1;
+      if (activeSlide.current === 0) {
+        showContactTL.current?.reverse();
+        playSibling();
       } else {
-        console.log("service");
-        await showServiceTL.current?.reverse();
-        await showContactTL.current?.play();
-        activeSlide = 0;
+        showServiceTL.current?.reverse();
+        setTimeout(() => {
+          showContactTL.current?.play();
+          playSibling(1900);
+        }, 1900);
       }
     };
 
@@ -135,10 +131,6 @@ const AboveFold: React.FC = (): ReactElement => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="hero-slider__buttons" ref={buttonsContainer}>
-          <div className="hero-slider__button"></div>
-          <div className="hero-slider__button"></div>
         </div>
       </div>
     </div>
