@@ -25,7 +25,7 @@
   height: 58rem;
 }
 .fold .hero-slider__img {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 58rem;
   display: flex;
@@ -72,9 +72,9 @@
 }
 .fold .hero-slider__services {
   color: #000;
-  display: block;
   text-align: center;
   padding-top: 1rem;
+  display: none;
 }
 .fold .hero-slider__services h2 {
   font-size: 5rem;
@@ -129,4 +129,4 @@
 .fold .hero-slider__button:hover {
   background-color: #000;
   cursor: pointer;
-}
+}/*# sourceMappingURL=above_fold.css.map */

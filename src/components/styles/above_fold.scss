@@ -35,7 +35,7 @@
     height: $height;
 
     &__img {
-      position: relative;
+      position: absolute;
       width: 100%;
       height: $height;
       display: flex;
@@ -57,7 +57,11 @@
           from(rgba(0, 0, 0, 1)) 250px,
           to(rgba(0, 0, 0, 0))
         );
-        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 250px, rgba(0, 0, 0, 0));
+        mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1) 250px,
+          rgba(0, 0, 0, 0)
+        );
       }
 
       *:not(img) {
@@ -96,9 +100,9 @@
 
     &__services {
       color: #000;
-      display: block;
       text-align: center;
       padding-top: 1rem;
+      display: none;
 
       h2 {
         font-size: 5rem;
