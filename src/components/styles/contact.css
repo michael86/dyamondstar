@@ -1,0 +1,36 @@
+.contact--container {
+  font-size: 2.3rem;
+  text-align: center;
+  background-color: #458bd6;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  padding-top: 2rem;
+  padding: 2rem;
+}
+.contact--title {
+  text-transform: capitalize;
+  line-height: 3.5rem;
+}
+.contact--icon {
+  margin: 1rem auto;
+  font-size: 6rem;
+  padding: 1.5rem;
+  border-radius: 50%;
+  border: 3px solid #000;
+  max-width: 15%;
+}
+.contact--link {
+  color: #000;
+  font-size: 2.2rem;
+  text-decoration: none;
+}
+.contact--link:visited {
+  color: #000;
+}
+.contact--link .icon {
+  margin-right: 1rem;
+}
+.contact--link:not(:first-of-type) {
+  margin-top: 0.5rem;
+}

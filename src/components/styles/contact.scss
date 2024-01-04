@@ -1,0 +1,45 @@
+@import "./variables.scss";
+
+.contact {
+  &--container {
+    font-size: 2.3rem;
+    text-align: center;
+    background-color: $primaryColor;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    padding-top: 2rem;
+    padding: 2rem;
+  }
+
+  &--title {
+    text-transform: capitalize;
+    line-height: 3.5rem;
+  }
+
+  &--icon {
+    margin: 1rem auto;
+    font-size: 6rem;
+    padding: 1.5rem;
+    border-radius: 50%;
+    border: 3px solid #000;
+    max-width: 15%;
+  }
+
+  &--link {
+    color: #000;
+    font-size: 2.2rem;
+    text-decoration: none;
+    &:visited {
+      color: #000;
+    }
+
+    .icon {
+      margin-right: 1rem;
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 0.5rem;
+    }
+  }
+}

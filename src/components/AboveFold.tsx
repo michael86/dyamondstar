@@ -33,9 +33,7 @@ const AboveFold: React.FC = (): ReactElement => {
   useLayoutEffect(() => {
     const playSibling = (timer: number = 2000) => {
       setTimeout(() => {
-        activeSlide.current === 0
-          ? showServiceTL.current?.play()
-          : showContactTL.current?.play();
+        activeSlide.current === 0 ? showServiceTL.current?.play() : showContactTL.current?.play();
 
         activeSlide.current = activeSlide.current === 0 ? 1 : 0;
       }, timer);
@@ -54,41 +52,32 @@ const AboveFold: React.FC = (): ReactElement => {
       }
     };
 
-    setInterval(switchSlide, 15 * 1000);
+    setInterval(switchSlide, 5 * 1000);
   }, []);
 
   return (
-    <div className="fold">
-      <div className="site-title__container">
+    <section className="fold">
+      <section className="site-title site-title--container">
         <img
-          className="site-title__image"
+          className="site-title--image"
           src="./images/dyamond_star_logo.png"
           alt="company logo"
         />
-        <h2 className="site-title__header">
+        <h2 className="site-title--header">
           Dyamond <span>Star</span>
         </h2>
-      </div>
+      </section>
 
-      <div className="hero-slider">
-        <div className="hero-slider__img-container">
-          <div
-            className="hero-slider__img hero-slider__contact"
-            ref={contactContainer}
-          >
+      <section className="hero-slider">
+        <div className="hero-slider--img-container">
+          <div className="hero-slider--img hero-slider--contact" ref={contactContainer}>
             <h2>Free Estimates</h2>
             <p>Contact us today for a free no obligation quote</p>
             <button>Contact</button>
-            <img
-              src="./images/hero_contact_background.webp"
-              alt="hero contact background"
-            />
+            <img src="./images/hero_contact_background.webp" alt="hero contact background" />
           </div>
 
-          <div
-            className="hero-slider__img hero-slider__services"
-            ref={serviceContainer}
-          >
+          <div className="hero-slider--img hero-slider--services" ref={serviceContainer}>
             <h2>Services</h2>
             <img
               src="https://st.depositphotos.com/1031174/2234/i/450/depositphotos_22345609-stock-photo-work-tools.jpg"
@@ -132,8 +121,8 @@ const AboveFold: React.FC = (): ReactElement => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </section>
   );
 };
 

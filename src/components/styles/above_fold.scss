@@ -4,19 +4,19 @@
   margin-top: 2rem;
 
   .site-title {
-    &__container {
+    &--container {
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    &__image {
+    &--image {
       width: 20%;
       height: auto;
       margin-right: 2rem;
     }
 
-    &__header {
+    &--header {
       font-size: 3rem;
       font-weight: 100;
 
@@ -30,11 +30,11 @@
     $height: 58rem;
 
     margin-top: 2rem;
-    overflow-y: hidden;
+    overflow-x: hidden;
     position: relative;
     height: $height;
 
-    &__img {
+    &--img {
       position: absolute;
       width: 100%;
       height: $height;
@@ -57,11 +57,7 @@
           from(rgba(0, 0, 0, 1)) 250px,
           to(rgba(0, 0, 0, 0))
         );
-        mask-image: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 1) 250px,
-          rgba(0, 0, 0, 0)
-        );
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 250px, rgba(0, 0, 0, 0));
       }
 
       *:not(img) {
@@ -98,7 +94,7 @@
       }
     }
 
-    &__services {
+    &--services {
       color: #000;
       text-align: center;
       padding-top: 1rem;
@@ -139,31 +135,6 @@
         border: 0.5rem solid $primaryColor;
         border-radius: 50%;
         box-shadow: 10px 10px 20px #000;
-      }
-    }
-    &__buttons {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-
-    &__button {
-      opacity: 0;
-      width: 25px;
-      height: 25px;
-      border-radius: 25rem;
-      background-color: $primaryColor;
-
-      &:first-of-type {
-        margin-right: 0.8rem;
-      }
-
-      &:hover {
-        background-color: #000;
-        cursor: pointer;
       }
     }
   }
