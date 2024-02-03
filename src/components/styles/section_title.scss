@@ -1,0 +1,43 @@
+@import "./variables.scss";
+
+.section {
+  &-title {
+    &--container {
+      position: relative;
+      padding: 1rem;
+      border: 2px solid $primaryColor;
+      text-align: center;
+      width: fit-content;
+      margin: auto;
+      margin-bottom: 2rem;
+
+      h2 {
+        text-align: center;
+        font-size: 3rem;
+      }
+    }
+    &--icon {
+      position: absolute;
+      top: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #fff;
+      padding: 1rem;
+    }
+    &--sub {
+      position: absolute;
+      bottom: -2.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      font-size: 1.8rem;
+      background-color: #fff;
+      padding: 1rem;
+    }
+  }
+  &--sub-title {
+    margin-top: 2rem;
+    padding: 0 2rem;
+    text-align: center;
+  }
+}

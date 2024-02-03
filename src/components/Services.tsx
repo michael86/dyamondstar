@@ -11,6 +11,7 @@ import {
   faSailboat,
 } from "@fortawesome/free-solid-svg-icons";
 import "./styles/services.css";
+import SectionTitle from "./SectionTitle";
 
 type Services = {
   title: string;
@@ -75,15 +76,11 @@ const services: Services = [
 const Services: React.FC = (): ReactElement => {
   return (
     <section className="services services--container">
-      <div className="services-title services-title--container">
-        <FontAwesomeIcon className="services-title--icon" icon={faHammer} />
-        <h2>Our Services</h2>
-        <p className="services-title--sub">What We Can Do</p>
-      </div>
-      <p className="services--sub-title">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-        molestias ipsam quia, consequatur expedita voluptates sit esse excepturi
-        porro reprehenderit.
+      <SectionTitle title={"Our Services"} subTitle="What We Can Do" icon={faHammer} />
+
+      <p className="services--info">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae molestias ipsam quia,
+        consequatur expedita voluptates sit esse excepturi porro reprehenderit.
       </p>
 
       <div className="services--service-container">
