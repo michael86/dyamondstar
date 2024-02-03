@@ -12,6 +12,11 @@ const SuccessRate: React.FC = (): ReactElement => {
         icon={faCheck}
         light={true}
       />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam distinctio quae maiores
+        asperiores praesentium fugit reiciendis facilis dolore id voluptatibus illo quis odio quod
+        nihil excepturi, eligendi sint quos provident!
+      </p>
     </section>
   );
 };
