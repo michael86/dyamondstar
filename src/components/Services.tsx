@@ -76,7 +76,12 @@ const services: Services = [
 const Services: React.FC = (): ReactElement => {
   return (
     <section className="services services--container">
-      <SectionTitle title={"Our Services"} subTitle="What We Can Do" icon={faHammer} />
+      <SectionTitle
+        title={"Our Services"}
+        subTitle="What We Can Do"
+        icon={faHammer}
+        light={false}
+      />
 
       <p className="services--info">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae molestias ipsam quia,

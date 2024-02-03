@@ -5,8 +5,7 @@
   text-align: center;
   width: -moz-fit-content;
   width: fit-content;
-  margin: auto;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
 }
 .section-title--container h2 {
   text-align: center;
