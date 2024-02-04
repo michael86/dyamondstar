@@ -5,6 +5,7 @@ import AboveFold from "./components/AboveFold";
 import Contact from "./components/Contact";
 import Services from "./components/Services";
 import SuccessRate from "./components/SuccessRate";
+import ContactForm from "./components/ContactForm";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Contact />
         <Services />
         <SuccessRate />
+        <ContactForm />
       </main>
     </>
   );
