@@ -5,3 +5,32 @@
   color: #fff;
   text-align: center;
 }
+.success-rate--icon {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 3rem;
+  margin: 0 auto 1.3rem auto;
+  line-height: 10rem;
+  border-bottom: 2px solid #458bd6;
+  font-size: 5rem;
+}
+.success-rate--icon::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100vw;
+  box-shadow: 6px 0 0 6px #000, -6px 0 0 6px #000;
+}
+
+.happy-customers--container,
+.projects-completed--container,
+.average-rating--container,
+.qualified-staff--container {
+  margin-top: 0.8rem;
+}
