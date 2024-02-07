@@ -1,0 +1,76 @@
+@import "./variables.scss";
+
+.contact-form {
+  &--container {
+    margin: 2rem 0;
+    text-align: center;
+    * {
+      outline: none;
+    }
+
+    .input-container {
+      position: relative;
+      width: 90%;
+      height: 2rem;
+      margin: 4rem auto;
+
+      label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+        transition: all 0.5s ease-in-out;
+      }
+
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 25px;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        outline: 2px solid #fff;
+
+        &:focus,
+        &:active,
+        &:not(:placeholder-shown) {
+          + label {
+            top: -2.2rem;
+            left: 1rem;
+            transform: translate(0, 0);
+            color: $primaryColor;
+          }
+        }
+      }
+
+      :hover {
+        cursor: pointer;
+      }
+    }
+
+    input,
+    textarea {
+      border: 2px solid $primaryColor;
+    }
+
+    textarea {
+      width: 90%;
+      margin: auto;
+      display: block;
+      padding: 1rem;
+      border-radius: 25px;
+    }
+    button {
+      margin-top: 1rem;
+      background-color: $primaryColor;
+      color: #fff;
+      border-radius: 10%;
+      border: none;
+      padding: 0.5rem 1rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
