@@ -1,5 +1,5 @@
 .contact-form--container {
-  margin: 2rem 0;
+  margin: 1rem 0;
   text-align: center;
 }
 .contact-form--container * {
@@ -9,7 +9,10 @@
   position: relative;
   width: 90%;
   height: 2rem;
-  margin: 4rem auto;
+  margin: 2rem auto;
+}
+.contact-form--container .input-container:not(:first-of-type) {
+  margin-top: 4rem;
 }
 .contact-form--container .input-container label {
   position: absolute;
@@ -52,6 +55,7 @@
   display: block;
   padding: 1rem;
   border-radius: 25px;
+  margin-top: 4rem;
 }
 .contact-form--container button {
   margin-top: 1rem;

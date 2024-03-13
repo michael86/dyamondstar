@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import Services from "./components/Services";
 import SuccessRate from "./components/SuccessRate";
 import ContactForm from "./components/ContactForm";
+import Prices from "./components/Prices";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Services />
         <SuccessRate />
         <ContactForm />
+        <Prices />
       </main>
     </>
   );

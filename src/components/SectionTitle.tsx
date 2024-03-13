@@ -5,7 +5,7 @@ import "./styles/section_title.css";
 
 type Props = (props: {
   title: string;
-  subTitle: string;
+  subTitle?: string;
   icon: IconDefinition;
   margin?: number;
   light: boolean;
@@ -23,12 +23,14 @@ const SectionTitle: Props = ({ title, subTitle, icon, margin, light }) => {
         style={{ background: light ? "#000" : "#fff", color: light ? "#fff" : "#000" }}
       />
       <h2 style={{ color: light ? "#fff" : "#000" }}>{title}</h2>
-      <p
-        style={{ color: light ? "#fff" : "#000", backgroundColor: light ? "#000" : "#fff" }}
-        className="section-title--sub"
-      >
-        {subTitle}
-      </p>
+      {subTitle && subTitle.length > 0 && (
+        <p
+          style={{ color: light ? "#fff" : "#000", backgroundColor: light ? "#000" : "#fff" }}
+          className="section-title--sub"
+        >
+          {subTitle}
+        </p>
+      )}
     </div>
   );
 };
